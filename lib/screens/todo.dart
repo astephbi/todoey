@@ -20,10 +20,7 @@ class _TodoListState extends State<TodoList> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         backgroundColor: Colors.blueAccent,
-        onPressed: () {
-          showModalBottomSheet(
-              context: context, builder: ((context) => AddTask()));
-        },
+        onPressed: () {},
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,7 +30,7 @@ class _TodoListState extends State<TodoList> {
                   top: 60, bottom: 30, left: 30, right: 30),
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                  children: const [
                     CircleAvatar(
                         radius: 30,
                         backgroundColor: Colors.white,
