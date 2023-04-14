@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:todoey/screens/add_task.dart';
+import 'package:todoey/screens/present_dialog.dart';
 import 'package:todoey/widgets/task_tile.dart';
 import 'package:todoey/widgets/task_list.dart';
 
@@ -20,7 +21,9 @@ class _TodoListState extends State<TodoList> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         backgroundColor: Colors.blueAccent,
-        onPressed: () {},
+        onPressed: () {
+          _displayDialog();
+        },
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,9 +45,10 @@ class _TodoListState extends State<TodoList> {
                     Text(
                       'Todoey',
                       style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 50,
-                          fontWeight: FontWeight.w700),
+                        color: Colors.white,
+                        fontSize: 50,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                     Text(
                       '123 tasks',
@@ -54,11 +58,11 @@ class _TodoListState extends State<TodoList> {
                   ])),
           Expanded(
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: TaskList(),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: const TaskList(),
               height: 300,
               width: 700,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20),
@@ -70,5 +74,11 @@ class _TodoListState extends State<TodoList> {
         ],
       ),
     );
+  }
+
+  void _displayDialog() {
+    PresentDialog().present(context, (String data) {
+      print("In " + data);
+    });
   }
 }

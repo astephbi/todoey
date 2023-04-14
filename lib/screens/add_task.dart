@@ -17,7 +17,7 @@ class AddTask extends StatelessWidget {
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Text(
+                  const Text(
                     'Add a new',
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -30,7 +30,7 @@ class AddTask extends StatelessWidget {
                     autofocus: true,
                     textAlign: TextAlign.center,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   ElevatedButton(
@@ -40,9 +40,12 @@ class AddTask extends StatelessWidget {
                 ]),
           )),
           decoration: const BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20), topRight: Radius.circular(20))),
+            color: Colors.white,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(20),
+              topRight: Radius.circular(20),
+            ),
+          ),
         ));
   }
 }
