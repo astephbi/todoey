@@ -8,7 +8,7 @@ class AddTask extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: Color(0xFF757575),
+        color: const Color(0xFF757575),
         child: Container(
           height: 600,
           child: Center(
@@ -17,7 +17,7 @@ class AddTask extends StatelessWidget {
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Text(
+                  const Text(
                     'Add a new',
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -30,19 +30,22 @@ class AddTask extends StatelessWidget {
                     autofocus: true,
                     textAlign: TextAlign.center,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   ElevatedButton(
                     onPressed: () {},
-                    child: Text('Add '),
+                    child: const Text('Add '),
                   )
                 ]),
           )),
           decoration: const BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20), topRight: Radius.circular(20))),
+            color: Colors.white,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(20),
+              topRight: Radius.circular(20),
+            ),
+          ),
         ));
   }
 }

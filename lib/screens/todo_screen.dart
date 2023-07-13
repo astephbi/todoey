@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:todoey/screens/add_task.dart';
+import 'package:todoey/screens/add_task_screen.dart';
 import 'package:todoey/widgets/task_tile.dart';
 import 'package:todoey/widgets/task_list.dart';
 
@@ -13,14 +13,24 @@ class TodoList extends StatefulWidget {
 }
 
 class _TodoListState extends State<TodoList> {
+  Widget buildModalSheet(BuildContext context) {
+    return AddTask();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueAccent,
+      backgroundColor: Colors.red,
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        hoverColor: Colors.amber,
+        child: Icon(
+          Icons.add,
+          color: Colors.white,
+        ),
         backgroundColor: Colors.blueAccent,
-        onPressed: () {},
+        onPressed: () {
+          showModalBottomSheet(context: context, builder: buildModalSheet);
+        },
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
